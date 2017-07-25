@@ -1,0 +1,119 @@
+// Styling for the style guide menu.
+
+.kss__menu-trigger-label {
+  background-color: transparent;
+  border: none;
+  border-right: 1px solid $kss-header-text;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: block;
+  height: 0;
+  margin: 2px 20px 2px 0;
+  overflow: hidden;
+  padding: 50px 0 0 0;
+  position: relative;
+  width: 60px;
+
+  &:hover {
+    background-color: transparent;
+  }
+
+  span {
+    background-color: $color-kss-white;
+    display: block;
+    height: 2px;
+    left: 14px;
+    position: absolute;
+    width: calc(100% - 30px);
+    top: calc(50% - 1px);
+    transition: transform 0.3s, width 0.3s, top 0.3s;
+  }
+
+  span:first-child {
+    top: 14px;
+  }
+
+  span:last-child {
+    bottom: 14px;
+    top: auto;
+  }
+
+  .kss__menu-trigger:checked ~ & span {
+    display: none;
+  }
+
+  .kss__menu-trigger:checked ~ & span:first-child,
+  .kss__menu-trigger:checked ~ & span:last-child {
+    display: block;
+  }
+
+  .kss__menu-trigger:checked ~ & span:first-child {
+    top: 24px;
+    transform: rotate(-45deg);
+
+  }
+
+  .kss__menu-trigger:checked ~ & span:last-child {
+    bottom: 24px;
+    transform: rotate(45deg);
+  }
+}
+
+.kss__menu {
+  box-sizing: border-box;
+  background-color: $kss-menu-bg;
+  display: block;
+  height: calc(100vh - 50px);
+  left: 0;
+  overflow-y: scroll;
+  padding: 25px;
+  position: absolute;
+  top: 100%;
+  transition: left 200ms ease-in-out;
+  width: 100%;
+  z-index: $zi-kss-menu;
+
+  @include media-mw($bp-kss-sm) {
+    width: 300px;
+  }
+
+  //.kss__menu-trigger:checked ~ & {
+  //  left: 0;
+  //}
+}
+
+.kss__menu-trigger {
+  display: none;
+}
+
+.kss-menu__list ul {
+  margin: 10px 0;
+}
+
+.kss-menu__item--parent {
+  font-size: 18px;
+}
+
+.kss-menu__item {
+  font-size: 14px;
+}
+
+.kss-menu__link {
+  color: $color-kss-dark;
+  display: block;
+  text-decoration: none;
+
+  &:focus,
+  &:hover {
+    text-decoration: underline;
+  }
+
+  .kss-menu__item & {
+    padding: 5px 5px 5px 10px;
+  }
+
+  .kss-menu__item--parent > & {
+    color: $color-kss-black;
+    font-weight: bold;
+  }
+}

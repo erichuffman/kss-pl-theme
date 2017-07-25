@@ -1,0 +1,43 @@
+// Variables for the style guide.
+
+// Colors
+$color-kss-white: #ffffff;
+$color-kss-x-light: #f5f5f5;
+$color-kss-light: #bbbbbb;
+$color-kss-mid: #777777;
+$color-kss-dark: #222222;
+$color-kss-black: #000000;
+
+// Code syntax colors
+$color-kss-blue: #0086B3;
+$color-kss-green: #009926;
+$color-kss-navy: #000080;
+$color-kss-red: #990000;
+$color-kss-rose: #dd1144;
+$color-kss-teal: #008080;
+$color-kss-violet: #445588;
+
+// Breakpoints
+$bp-kss-xsm: 480px;
+$bp-kss-sm: 728px;
+$bp-kss-md: 1025px;
+
+// Z-Index
+$zi-kss-header: 1000;
+$zi-kss-menu: 999;
+
+// Standard max-width of content wrappers
+$kss-content-w: 1200px;
+
+// Header colors
+$kss-header-text: $color-kss-white;
+$kss-header-bg: $color-kss-dark;
+
+// Menu colors
+$kss-menu-bg: $color-kss-x-light;
+$kss-menu-link-parent: $color-kss-mid;
+$kss-menu-link: $color-kss-blue;
+
+$kss-title-text: $color-kss-dark;
+$kss-base-text: $color-kss-dark;
+$kss-hr: $color-kss-blue;
