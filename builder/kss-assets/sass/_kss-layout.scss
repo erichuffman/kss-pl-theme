@@ -57,10 +57,43 @@
   }
 }
 
+.kss-layout__content-frame-wrapper {
+  background-color: $color-kss-x-light;
+  height: 0;
+  left: 0;
+  position: absolute;
+  top: 50px;
+  width: 100%;
+
+  &.kss-active {
+    height: calc(100% - 50px);
+  }
+}
+
 .kss-layout__content-frame {
   border: 0;
+  height: 0;
+  left: 50%;
+  position: absolute;
+  top: 0;
+  transform: translateX(-50%);
+  transition: width 200ms ease-in-out;
   width: 100%;
+
+  &.kss-active {
+    height: calc(100% - 50px);
+  }
 }
+
+.kss-layout__main--home {
+  padding-top: 50px;
+
+  > .kss-inactive {
+    height: 0;
+    overflow: hidden;
+  }
+}
+
 
 .kss-layout__content-wrapper {
   flex: 1 0 100%;

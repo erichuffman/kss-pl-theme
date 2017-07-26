@@ -8,11 +8,20 @@
   <meta name="generator" content="kss-node">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   {{ styles|raw }}
+  <link rel="stylesheet" href="kss-assets/kss.css">
 </head>
 <body class="kss__body{{ homepage ? ' kss__body--homepage' }}{{ sections[0].layout == 'page' ? ' kss__body--page' }}{{ sections[0].classes ? ' ' ~ sections[0].classes }}">
   {% if homepage %}
     <header class="kss__header">
-      <h1 class="kss__header-title">{{ options.title }}</h1>
+      <div class="kss__header-title-wrapper">
+        <h1 class="kss__header-title">{{ options.title }}</h1>
+        <div class="kss__header-logo-wrapper">
+          {#
+            Include custom logo here.
+          #}
+          {{ test_title }}
+        </div>
+      </div>
       <nav class="kss__menu">
         <button class="kss__menu-toggle">
           <span></span>
@@ -21,24 +30,23 @@
           Menu
         </button>
         <ul class="kss__menu-list">
-          <li class="kss__menu-list-item">
-            <a class="kss__menu-list-item-link--home" href="./index.html">
-              <span class="kss__menu-list-item-ref">0</span>
+          <li class="kss__menu-list-item kss__menu-list-item--home">
+            <a class="kss__menu-list-item-link" href="./index.html">
               <span class="kss__menu-list-item-name">Overview</span>
             </a>
           </li>
           {% for menu_item in menu %}
-            <li class="kss__menu-list-item{{ menu_item.referenceNumber == sections[0].referenceNumber ? ' active' }}">
-              <a href="item-{{ menu_item.referenceURI }}.html">
+            <li class="kss__menu-list-item kss__menu-list-item--section">
+              <a class="kss__menu-list-item-link" href="item-{{ menu_item.referenceURI }}.html">
                 <span class="kss__menu-list-item-ref">{{ menu_item.referenceNumber }}</span>
                 <span class="kss__menu-list-item-name">{{ menu_item.header }}</span>
               </a>
               {% if menu_item.children is not empty %}
                 <ul class="kss__menu-list--child">
                   {% for menu_child in menu_item.children %}
-                    <li class="kss__menu-list-item{{ menu_child.referenceNumber == sections[0].referenceNumber ? ' active' }}">
-                      <a href="item-{{ menu_child.referenceURI }}.html">
-                        <span class="kss__menu-list-item-ref{% if menu_child.isGrandChild %} kss__menu-list-item-ref--child{% endif %}">
+                    <li class="kss__menu-list-item kss__menu-list-item--page{{ menu_child.referenceNumber == sections[0].referenceNumber ? ' kss-active' }}">
+                      <a class="kss__menu-list-item-link" href="item-{{ menu_child.referenceURI }}.html">
+                        <span class="kss__menu-list-item-ref{% if menu_child.isGrandChild %} kss__menu-list-item-ref--grandchild{% endif %}">
                           {{ menu_child.referenceNumber }}
                         </span>
                         <span class="kss__menu-list-item-name">
@@ -53,9 +61,44 @@
           {% endfor %}
         </ul>
       </nav>
+      {#
+        Set breaktpoint values here.
+      #}
+      {%
+        set breakpoints = [
+          {
+            "name": "small",
+            "value": "375"
+          },
+          {
+            "name": "medium",
+            "value": "768"
+          },
+          {
+            "name": "large",
+            "value": "1025"
+          },
+          {
+            "name": "x-large",
+            "value": "1480"
+          }
+        ]
+      %}
+      <ul class="kss__breakpoint-menu">
+        {% for bp in breakpoints %}
+          <li class="kss__breakpoint-menu-item">
+            <button class="kss__breakpoint-menu-button" data-bp-value="{{ bp.value }}">{{ bp.name }}</button>
+          </li>
+        {% endfor %}
+          <li class="kss__breakpoint-menu-item">
+            <button class="kss__breakpoint-menu-button kss-active" data-bp-value="full">full</button>
+          </li>
+      </ul>
     </header>
     <main class="kss-layout__main--home" aria-label="Content">
-      <iframe class="kss-layout__content-frame inactive"></iframe>
+      <div class="kss-layout__content-frame-wrapper">
+        <iframe class="kss-layout__content-frame"></iframe>
+      </div>
       <section class="kss-layout__content-wrapper">
         <article role="main" class="kss-layout__content">
           <div class="kss-item">
