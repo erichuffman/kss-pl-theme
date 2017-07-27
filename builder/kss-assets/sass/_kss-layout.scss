@@ -58,7 +58,7 @@
 }
 
 .kss-layout__content-frame-wrapper {
-  background-color: $color-kss-x-light;
+  background-color: $color-kss-light;
   height: 0;
   left: 0;
   position: absolute;
@@ -81,7 +81,7 @@
   width: 100%;
 
   &.kss-active {
-    height: calc(100% - 50px);
+    height: 100%;
   }
 }
 
@@ -93,7 +93,6 @@
     overflow: hidden;
   }
 }
-
 
 .kss-layout__content-wrapper {
   flex: 1 0 100%;
@@ -109,7 +108,6 @@
   margin: 0 auto;
 }
 
-// Container element for standard pages, like READMEs
 .kss-layout__content-container {
   box-sizing: border-box;
   margin: 0 auto;

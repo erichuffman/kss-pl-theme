@@ -1,6 +1,6 @@
 // Header styling
 
-.kss__header {
+.kss-header {
   align-items: center;
   background-color: $kss-header-bg;
   display: flex;
@@ -13,13 +13,13 @@
   z-index: $zi-kss-header;
 }
 
-.kss__header-title-wrapper {
+.kss-header__title-wrapper {
   align-items: center;
   display: flex;
   order: 2;
 }
 
-.kss__header-title {
+.kss-header__title {
   color: $kss-header-text;
   font-size: 22px;
   font-weight: bold;
@@ -29,7 +29,7 @@
   padding: 0 10px;
 }
 
-.kss__header-logo-wrapper {
+.kss-header__logo-wrapper {
   box-sizing: border-box;
   max-height: 50px;
   padding: 5px 20px 5px 0;

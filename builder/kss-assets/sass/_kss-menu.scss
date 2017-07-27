@@ -1,6 +1,6 @@
 // Styling for the style guide menu.
 
-.kss__menu {
+.kss-menu {
   align-items: center;
   box-sizing: border-box;
   display: flex;
@@ -8,7 +8,7 @@
   position: relative;
 }
 
-.kss__menu-toggle {
+.kss-menu__toggle {
   background-color: transparent;
   border: none;
   box-sizing: border-box;
@@ -71,7 +71,7 @@
   }
 }
 
-.kss__menu-list {
+.kss-menu__list {
   background-color: $kss-header-bg;
   list-style: none;
   display: flex;
@@ -102,15 +102,15 @@
   }
 }
 
-.kss__menu-list-item {
+.kss-menu__list-item {
   font-size: 16px;
   line-height: 1;
   margin: 0;
   position: relative;
 }
 
-.kss__menu-list-item--home,
-.kss__menu-list-item--section {
+.kss-menu__list-item--home,
+.kss-menu__list-item--section {
   border-bottom: 1px solid rgba($kss-menu-link, 0.75);
   padding: 5px 0;
 
@@ -119,18 +119,14 @@
     padding: 0;
   }
 
-  > .kss__menu-list-item-link {
+  > .kss-menu__list-item-link {
     font-weight: bold;
-
-    .kss__menu-list-item-ref {
-      font-weight: normal;
-    }
   }
 }
 
-.kss__menu-list-item--section {
+.kss-menu__list-item--section {
 
-  > .kss__menu-list-item-link {
+  > .kss-menu__list-item-link {
     padding-right: 40px;
     position: relative;
 
@@ -148,7 +144,7 @@
     }
   }
 
-  > .kss__menu-list-item-link.kss-open {
+  > .kss-menu__list-item-link.kss-open {
 
     @include media-mw($bp-kss-xlg) {
       background-color: $kss-menu-dpdwn-bg;
@@ -164,9 +160,16 @@
       top: calc(50% - 5px);
     }
   }
+
+  > .kss-menu__list-item-link.kss-active {
+
+     &::after {
+      border-color: $kss-menu-link-active;
+    }
+  }
 }
 
-.kss__menu-list-item--page {
+.kss-menu__list-item--page {
   border-bottom: 1px solid rgba($kss-menu-link, 0.25);
   flex: 0 0 100%;
 
@@ -177,7 +180,7 @@
   }
 }
 
-.kss__menu-list-item-link {
+.kss-menu__list-item-link {
   color: $kss-menu-link;
   display: block;
   padding: 10px 20px;
@@ -190,24 +193,33 @@
   &:hover {
     color: $kss-menu-link;
   }
+
+  &.kss-active {
+    color: $kss-menu-link-active;
+    font-weight: bold;
+  }
 }
 
-.kss__menu-list-item-ref {
+.kss-menu__list-item-ref {
   display: inline-block;
   border-radius: 5px;
   color: $kss-header-bg;
-  background: rgba($kss-menu-link, 0.80);
+  background: $kss-menu-link;
   margin-right: 5px;
   padding: 3px 5px;
 
-  .kss__menu-list-item--page & {
+  .kss-menu__list-item--page & {
     color: $kss-menu-dpdwn-bg;
     min-width: 40px;
     text-align: center;
   }
+
+  .kss-active > & {
+    background-color: $kss-menu-link-active;
+  }
 }
 
-.kss__menu-list--child {
+.kss-menu__list--child {
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
@@ -244,28 +256,36 @@
   }
 }
 
-.kss__breakpoint-menu {
+.kss-breakpoint-menu {
   display: none;
 
   @include media-mw($bp-kss-lg) {
-    align-items: center;
-    display: flex;
+    height: 0;
     list-style: none;
     margin: 0;
+    overflow: hidden;
     padding: 0;
+    width: 0;
+
+    &.kss-active {
+      align-items: center;
+      display: flex;
+      height: auto;
+      width: auto;
+    }
   }
 }
 
-.kss__breakpoint-menu-item {
+.kss-breakpoint-menu__item {
   margin: 0;
   padding: 0;
 }
 
-.kss__breakpoint-menu-button {
-  background: $kss-menu-dpdwn-bg;
+.kss-breakpoint-menu__button {
+  background: $kss-menu-link;
   border: 0;
   border-radius: 4px;
-  color: $kss-menu-link;
+  color: $kss-header-bg;
   font-size: 14px;
   height: auto;
   line-height: 1;
@@ -273,7 +293,6 @@
   padding: 4px 8px;
 
   &.kss-active {
-    color: $kss-header-bg;
-    background: $kss-menu-link;
+    background: $kss-menu-link-active;
   }
 }
