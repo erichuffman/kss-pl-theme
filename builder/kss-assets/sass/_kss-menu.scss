@@ -14,6 +14,7 @@
   box-sizing: border-box;
   color: $kss-menu-link;
   cursor: pointer;
+  font-family: $kss-font-stack;
   font-size: 16px;
   font-weight: bold;
   height: 50px;
@@ -103,6 +104,7 @@
 }
 
 .kss-menu__list-item {
+  font-family: $kss-font-stack;
   font-size: 16px;
   line-height: 1;
   margin: 0;
@@ -286,6 +288,7 @@
   border: 0;
   border-radius: 4px;
   color: $kss-header-bg;
+  font-family: $kss-font-stack;
   font-size: 14px;
   height: auto;
   line-height: 1;

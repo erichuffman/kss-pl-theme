@@ -1,0 +1,63 @@
+// Styling for helper markup that can be used in the
+// display of style guide examples.
+
+// Swatch blocks - good for showing color samples.
+
+.kss-swatch {
+  border: 3px solid rgba($color-kss-black, 0.25);
+  border-radius: 3px;
+  display: inline-block;
+  height: 180px;
+  margin: 3px;
+  position: relative;
+  width: 180px;
+}
+
+.kss-swatch__hex {
+  background: rgba($color-kss-black, 0.25);
+  bottom: 0;
+  color: $color-kss-white;
+  font-size: 14px;
+  left: 0;
+  padding: 10px;
+  position: absolute;
+  width: 100%;
+}
+
+.kss-example-grid,
+.kss-icons {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.kss-example-grid__item,
+.kss-icons__item {
+  border: 3px solid rgba($color-kss-black, 0.25);
+  border-radius: 3px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 5px;
+  position: relative;
+  text-align: center;
+  width: calc(16.66% - 10px);
+}
+
+.kss-example-grid__item-container,
+.kss-icons__icon {
+  fill: $color-kss-black;
+  margin: 20px auto;
+  max-width: 100%;
+  min-height: 50px;
+  width: auto;
+}
+
+.kss-example-grid__item-name,
+.kss-icons__name {
+  background: rgba($color-kss-black, 0.25);
+  color: $color-kss-white;
+  font-size: 14px;
+  left: 0;
+  padding: 10px;
+}

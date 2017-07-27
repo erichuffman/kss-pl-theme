@@ -3,12 +3,11 @@
 <head>
   <meta charset="utf-8">
   <title>{{ options.title }}</title>
-
   <meta name="description" content="">
   <meta name="generator" content="kss-node">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  {{ styles|raw }}
   <link rel="stylesheet" href="kss-assets/kss.css">
+  {{ styles|raw }}
 </head>
 <body class="kss-body{{ homepage ? ' kss-body--homepage' }}{{ sections[0].layout == 'page' ? ' kss-body--page' }}{{ sections[0].classes ? ' ' ~ sections[0].classes }}">
   {% if homepage %}
@@ -171,9 +170,9 @@
 
                   {% if section.markup %}
                     <div class="kss-item__details-wrapper">
-                      <dl class="kss-item__details">
-                        <dt class="kss-item__details-title kss-active">Markup Example</dt>
-                        <dd class="kss-item__details-content kss-active">
+                      <dl class="kss-item__markup-example">
+                        <dt class="kss-item__markup-example-title">Markup Details</dt>
+                        <dd class="kss-item__markup-example-content kss-syntax-wrapper">
                           <pre>
                             <code data-language="html">
                               {{ section.markup|escape('html') }}
@@ -182,20 +181,16 @@
                         </dd>
                       </dl>
                       {% if section.sourceFile.name %}
-                        <dl class="kss-item__details">
-                          <dt class="kss-item__details-title">Source</dt>
-                          <dd class="kss-item__details-content">
-                            <code>
-                              {{ section.sourceFile.name }}
-                            </code>, line {{ section.sourceFile.line }}
-                          </dd>
-                        </dl>
+                        <div class="kss-item__source-file">
+                          <h4 class="kss-item__source-file-title">Source</h4>
+                          <div class="kss-item__source-file-content">
+                            <code>{{ section.sourceFile.name }}</code>, line {{ section.sourceFile.line }}
+                          </div>
+                        </div>
                       {% endif %}
                     </div>
                   {% endif %}
-
                 {% endif %}
-
               </div>
             {% endfor %}
           </article>
@@ -207,28 +202,10 @@
       {% endfor %}
     {% endif %}
   {% endif %}
-  <!-- SCRIPTS -->
-  <!-- Fake drupalSettings -->
-  <script type="application/json" data-drupal-selector="drupal-settings-json">
-    {}
-  </script>
-  <!-- / Fake drupalSettings -->
-  <script src="/core/assets/vendor/jquery/jquery.min.js"></script>
-  <script src="/core/assets/vendor/jquery-once/jquery.once.min.js"></script>
-  <script src="/core/assets/vendor/domready/ready.min.js"></script>
-  <script src="/core/misc/drupalSettingsLoader.js"></script>
-  <script src="/core/misc/drupal.js"></script>
-  <script src="/core/misc/drupal.init.js"></script>
+  <script src="kss-assets/jquery.min.js"></script>
   <script src="kss-assets/rainbow.min.js"></script>
   <script src="kss-assets/kss-menu.js"></script>
-  <script src="../bootstrap/js/dropdown.js"></script>
-  <script src="../bootstrap/js/modal.js"></script>
-  <script src="../bootstrap/js/affix.js"></script>
-  <script src="../js/jquery.flexslider-min.js"></script>
-  <script src="../js/menus.js"></script>
-  <script src="../js/site-search.js"></script>
-  <script src="../js/slideshow.js"></script>
   {{ scripts|raw }}
-<!-- Automatically built using <a href="https://github.com/kss-node/kss-node">kss-node</a>. -->
+  <!-- Automatically built using <a href="https://github.com/kss-node/kss-node">kss-node</a>. -->
 </body>
 </html>
