@@ -49,7 +49,7 @@ For standard style guide listings you can include classes that allow the listing
 
 See the Sass partials included in `kss-assets/sass` if you want to customize colors, default font-family, etc., and recompile into an updated `kss.css` file. Note that some helper classes are available in the `_kss-helpers.scss` partial which are useful for marking up elements like color swatches.
 
-Also see the `index.twig` file where you can update what breakpoints are used for the breakpoint menu, which functions like the Pattern Lab where you can quickly resize the viewport of the style guide to different breakpoints.
+Also see the `index.twig` file where you can update what breakpoints are used for the breakpoint menu, which functions like Pattern Lab where you can quickly resize the viewport of the style guide to different breakpoints.
 
 ## @TODO
 
