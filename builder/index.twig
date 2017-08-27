@@ -36,7 +36,7 @@
           </li>
           {% for menu_item in menu %}
             <li class="kss-menu__list-item kss-menu__list-item--section">
-              <a class="kss-menu__list-item-link" href="item-{{ menu_item.referenceURI }}.html" role="button" aria-controls="kss-menu-child-menu-{{ loop.index }}" aria-expanded="false">
+              <a class="kss-menu__list-item-link" href="section-{{ menu_item.referenceURI }}.html" role="button" aria-controls="kss-menu-child-menu-{{ loop.index }}" aria-expanded="false">
                 <span class="kss-menu__list-item-ref">{{ menu_item.referenceNumber }}.0</span>
                 <span class="kss-menu__list-item-name">{{ menu_item.header }}</span>
               </a>
@@ -44,7 +44,7 @@
                 <ul class="kss-menu__list--child" id="kss-menu-child-menu-{{ loop.index }}" aria-hidden="true">
                   {% for menu_child in menu_item.children %}
                     <li class="kss-menu__list-item kss-menu__list-item--page{{ menu_child.referenceNumber == sections[0].referenceNumber ? ' kss-active' }}">
-                      <a class="kss-menu__list-item-link" href="item-{{ menu_child.referenceURI }}.html">
+                      <a class="kss-menu__list-item-link" href="index.html?item={{ menu_child.referenceURI }}" data-item="{{ menu_child.referenceURI }}" data-level="child">
                         <span class="kss-menu__list-item-ref{% if menu_child.isGrandChild %} kss-menu__list-item-ref--grandchild{% endif %}">
                           {{ menu_child.referenceNumber }}
                         </span>
@@ -203,8 +203,11 @@
     {% endif %}
   {% endif %}
   <script src="kss-assets/jquery.min.js"></script>
-  <script src="kss-assets/rainbow.min.js"></script>
-  <script src="kss-assets/kss-menu.js"></script>
+  {% if homepage %}
+    <script src="kss-assets/kss-menu.js"></script>
+  {% else %}
+    <script src="kss-assets/rainbow.min.js"></script>
+  {% endif %}
   {{ scripts|raw }}
   <!-- Automatically built using <a href="https://github.com/kss-node/kss-node">kss-node</a>. -->
 </body>

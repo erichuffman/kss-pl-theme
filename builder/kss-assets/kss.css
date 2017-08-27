@@ -277,11 +277,13 @@
   display: flex;
   -ms-flex-direction: column;
   flex-direction: column;
+  left: 0;
   margin: 0;
   max-height: calc(100vh - 50px);
   overflow: auto;
   padding: 0;
   position: fixed;
+  right: 0;
   top: -1000em;
   transition: top 100ms ease-in;
   width: 100vw; }
@@ -500,7 +502,27 @@
   margin: 5px;
   position: relative;
   text-align: center;
-  width: calc(16.66% - 10px); }
+  width: calc(50% - 10px); }
+  .kss-example-grid__item.kss-example-grid__item--50, .kss-example-grid__item.kss-icons__item--50,
+  .kss-icons__item.kss-example-grid__item--50,
+  .kss-icons__item.kss-icons__item--50 {
+    width: calc(100% - 10px); }
+  @media only screen and (min-width: 728px) {
+    .kss-example-grid__item,
+    .kss-icons__item {
+      width: calc(33.33% - 10px); }
+      .kss-example-grid__item.kss-example-grid__item--50, .kss-example-grid__item.kss-icons__item--50,
+      .kss-icons__item.kss-example-grid__item--50,
+      .kss-icons__item.kss-icons__item--50 {
+        width: calc(50% - 10px); } }
+  @media only screen and (min-width: 1025px) {
+    .kss-example-grid__item,
+    .kss-icons__item {
+      width: calc(25% - 10px); } }
+  @media only screen and (min-width: 1200px) {
+    .kss-example-grid__item,
+    .kss-icons__item {
+      width: calc(16.66% - 10px); } }
 
 .kss-example-grid__item-container,
 .kss-icons__icon {
@@ -517,6 +539,20 @@
   font-size: 14px;
   left: 0;
   padding: 10px; }
+
+.kss-visually-hidden {
+  position: absolute !important;
+  clip: rect(1px, 1px, 1px, 1px);
+  overflow: hidden;
+  height: 1px;
+  width: 1px;
+  word-wrap: normal; }
+  .kss-visually-hidden.kss-focusable:focus {
+    position: static !important;
+    clip: auto;
+    overflow: visible;
+    height: auto;
+    width: auto; }
 
 .kss-item__overview-wrapper {
   border-bottom: 1px solid #bbbbbb;
@@ -615,6 +651,9 @@
   .kss-item__description a:focus, .kss-item__description a:hover {
     text-decoration: none; }
 
+.kss-item__description code {
+  font-family: monospace; }
+
 .kss-item__description *:last-child {
   margin-bottom: 0; }
 
@@ -668,6 +707,8 @@
     background-color: #595959; }
   .kss-bg-dark .kss-item__example {
     background-color: #000000; }
+  .kss-pos-relative .kss-item__example {
+    position: relative; }
   .kss-item__example::after {
     content: '';
     display: table;

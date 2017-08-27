@@ -123,6 +123,10 @@
     }
   }
 
+  code {
+    font-family: monospace;
+  }
+
   *:last-child {
     margin-bottom: 0;
   }
@@ -193,6 +197,10 @@
 
   .kss-bg-dark & {
     background-color: $color-kss-black;
+  }
+
+  .kss-pos-relative & {
+    position: relative;
   }
 
   &::after {
