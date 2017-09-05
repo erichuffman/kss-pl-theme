@@ -1,0 +1,12 @@
+<div class="kss-example-grid">
+  {% for icon in icons %}
+    <div class="kss-example-grid__item">
+      <div class="kss-example-grid__item-container">
+        {% include "@kss-pl-theme/icons/" ~ icon.filename ~ ".svg.twig" %}
+      </div>
+      <div class="kss-example-grid__item-name">
+        {{ icon.name }}<br />({{ icon.filename }})
+      </div>
+    </div>
+  {% endfor %}
+</div>

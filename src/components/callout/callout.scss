@@ -1,0 +1,63 @@
+// Callout
+//
+// This is the callout component, which includes an icon, with title.
+//
+// Markup: callout.twig
+//
+// Layout: component
+//
+// Style guide: Components.callout
+
+// Import site utilities.
+@import '../../global/utils';
+
+.callout__collection {
+  display: flex;
+  flex-wrap: wrap;
+
+  @include media-mw($bp-sm) {
+
+    .callout {
+      width: 33.33%;
+    }
+  }
+}
+
+.callout {
+  align-items: center;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  width: 100%;
+
+  a {
+    color: $color-primary;
+    text-decoration: none;
+  }
+}
+
+.callout__icon {
+  border: 4px solid $color-primary;
+  border-radius: 100px;
+  height: 100px;
+  margin: 0 auto;
+  width: 100px;
+
+  .icon {
+    display: block;
+    fill: $color-primary;
+    height: 50px;
+    margin: 22px auto 0 auto;
+    width: 50px;
+  }
+}
+
+.callout__title {
+  color: $color-primary;
+  font-size: 1.5rem;
+  font-weight: $font-regular;
+  margin: 12px 0;
+  text-align: center;
+  text-transform: uppercase;
+}

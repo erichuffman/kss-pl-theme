@@ -1,0 +1,16 @@
+{
+  "icons": [
+    {
+      "filename": "icon-email",
+      "name": "Email"
+    },
+    {
+      "filename": "icon-calendar",
+      "name": "Calendar"
+    },
+    {
+      "filename": "icon-map-pin",
+      "name": "Map Pin"
+    }
+  ]
+}

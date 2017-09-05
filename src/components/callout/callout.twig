@@ -1,0 +1,10 @@
+<article class="callout">
+  <a href="{{ link }}">
+    <div class="callout__icon">
+      {% if icon %}
+        {% include "@kss-pl-theme/icons/" ~ icon ~ ".svg.twig" %}
+      {% endif %}
+    </div>
+    <h2 class="callout__title">{{ title }}</h2>
+  </a>
+</article>

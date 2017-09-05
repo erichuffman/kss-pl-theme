@@ -1,0 +1,43 @@
+.body-text {
+  font-family: "Open Sans", sans-serif;
+  font-size: 1rem;
+  line-height: 1.5; }
+  .body-text p {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 16px; }
+  .body-text h2,
+  .body-text h3,
+  .body-text h4,
+  .body-text h5,
+  .body-text h6 {
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 8px; }
+  .body-text h2 {
+    font-size: 2rem; }
+  .body-text h3 {
+    font-size: 1.625rem; }
+  .body-text h4 {
+    font-size: 1.375rem; }
+  .body-text h5 {
+    font-size: 1.25rem; }
+  .body-text h6 {
+    font-size: 1.125rem; }
+  .body-text a {
+    border-bottom: 1px solid #595959;
+    color: #000000;
+    text-decoration: none;
+    -webkit-transition: border-color 250ms;
+    transition: border-color 250ms; }
+  .body-text a:focus,
+  .body-text a:hover {
+    border-color: #a3640a;
+    border-width: 2px;
+    color: #a3640a;
+    text-decoration: none; }
+  .body-text hr {
+    background: #595959;
+    border: 0;
+    height: 1px;
+    margin: 16px 0; }
