@@ -21,7 +21,7 @@ var rename      = require('gulp-rename');
 var runSequence = require('run-sequence');
 var sass        = require('gulp-sass');
 
-gulp.task('styleguide', function() {
+gulp.task('sg-build', function() {
   return kss({
     source: [
       './src/global',
@@ -39,6 +39,32 @@ gulp.task('styleguide', function() {
     title: 'KSS PL Theme',
     custom: ['Layout', 'Classes']
   });
+});
+
+gulp.task('sg-sass', function() {
+  return gulp.src('./builder/kss-assets/sass/*.scss')
+    .pipe(sass({ outputStyle: 'nested' })
+      .on('error', sass.logError))
+    .pipe(prefix({
+      browsers: [
+        'last 2 versions',
+        'IE >= 10'
+      ],
+      cascade: false
+    }))
+    .pipe(rename(function (path) {
+      path.dirname = '';
+      return path;
+    }))
+    .pipe(gulp.dest('./builder/kss-assets'));
+});
+
+gulp.task('styleguide', function(callback) {
+  runSequence(
+    'sg-sass',
+    'sg-build',
+    callback
+  );
 });
 
 gulp.task('compile', function() {
