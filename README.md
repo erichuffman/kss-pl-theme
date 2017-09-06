@@ -8,11 +8,15 @@ This is a custom builder for the [twig version of kss-node](https://github.com/k
 
 Swap the `index.twig` file in your current `builder` directory for the one in this repo, as well as the `kss.css` located in `builder/kss-assets`.
 
-You'll also need to include a copy of the `kss-menu.js` file from this repo in your `builder/kss-assets` directory, and if you're not already including jQuery and the `rainbow.min.js` library, include those files too. 
+You'll also need to include a copy of the `kss-menu.js` file from this repo in your `builder/kss-assets` directory, and if you're not already including jQuery and the `rainbow.min.js` library, include those files too.
+
+## Live Demo ##
+
+To see the KSS PL theme in action, go here: https://erichuffman-mc.github.io/kss-pl-theme/
 
 ## Add Custom Settings
 
-In your KSS script add two custom options: `Layout` and `Classes`. 
+In your KSS script add two custom options: `Layout` and `Classes`.
 
 Example:
 
