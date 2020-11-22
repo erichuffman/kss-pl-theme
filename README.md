@@ -41,7 +41,7 @@ For example:
 // Style guide: Pages.Homepage
 ```
 
-When the style guide is built this would result in an `item-pages-homepage.html` file, which would only include the "shell" of the `index.twig` file, and any markup you add to your `homepage.twig` file is included within the `<body>` tag. Any classes you include in the `Classes` setting will be included in the `body` tag's `class` attribute.
+When the style guide is built this results in an `item-pages-homepage.html` file, which only includes the "shell" of the `index.twig` file, and any markup you add to your `homepage.twig` file is included within the `<body>` tag. Any classes you include in the `Classes` property will be included in the `body` tag's `class` attribute.
 
 For standard style guide listings you can include classes that allow the listing to be displayed in a full-width layout, or with dark/medium gray background:
 
